@@ -104,10 +104,10 @@ The module is compatible with various **Gowin FPGA families**, such as:
 - GW2A (Arora)  
 
 
-# SerialCommunicator
+# WinSerial
 
 ## Overview
-The **SerialCommunicator** is a simple C# application for serial communication over a specified COM port. It enables sending and receiving data through a serial interface, making it useful for interacting with embedded systems, microcontrollers, or other serial-based devices.
+The **WinSerial** is a simple C# Console application for serial communication over a specified COM port. It enables sending and receiving data through a serial interface, making it useful for interacting with embedded systems, microcontrollers, or other serial-based devices.
 
 ## Features
 - Connects to a specified serial port with configurable settings
