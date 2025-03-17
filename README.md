@@ -2,6 +2,8 @@
 
 The **`uart_test`** module is a simple UART loopback system that receives serial data via **`uart_rx`**, stores it in a buffer, and transmits it back through **`uart_tx`** after detecting a carriage return (`0x0D`).
 
+The **Tang Primer 20K** is a compact and powerful FPGA development board based on the **Gowin GW2AR-18C FPGA**, offering **20K LUTs** (Look-Up Tables) for flexible digital logic design. Designed for both beginners and experienced FPGA developers, it supports the **Gowin IDE** toolchain, making it ideal for hardware prototyping, signal processing, and embedded system applications. The board features a **high-speed USB Type-C interface**, onboard **SPI Flash**, and **SDRAM**, enabling efficient data storage and high-speed computation. Additionally, it includes multiple **I/O headers**, allowing easy interfacing with external peripherals such as sensors, displays, and communication modules. With its open-source support and compatibility with **RISC-V soft-core processors**, the Tang Primer 20K is a versatile platform for FPGA-based innovation and custom hardware development.
+
 ## **Module Ports**
 - `clk` (input) – System clock.
 - `rst_n` (input) – Active-low reset.
