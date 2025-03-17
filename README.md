@@ -103,3 +103,55 @@ The module is compatible with various **Gowin FPGA families**, such as:
 - GW1NR (LittleBee Risc-V)  
 - GW2A (Arora)  
 
+# SerialCommunicator
+
+## Overview
+The **SerialCommunicator** is a simple C# application for serial communication over a specified COM port. It enables sending and receiving data through a serial interface, making it useful for interacting with embedded systems, microcontrollers, or other serial-based devices.
+
+## Features
+- Connects to a specified serial port with configurable settings
+- Reads incoming serial data in a separate thread
+- Sends user-input messages to the connected device
+- Handles exceptions for stability
+- Supports basic data formatting
+
+## Prerequisites
+- .NET Framework or .NET Core installed
+- A device connected via a serial interface (e.g., Arduino, FPGA, or another computer)
+- Knowledge of the correct **COM port** and **baud rate** for the device
+
+## Installation
+1. Clone or download the repository.
+2. Open the project in **Visual Studio** or any compatible C# IDE.
+3. Ensure the correct **COM port** is set in the `portName` variable inside the `Main` method.
+
+## Usage
+
+### 1. Configure the Serial Port
+Modify the following variables inside the `Main` method to match your device’s serial settings:
+```csharp
+string portName = "COM9"; // Set the correct COM port
+int baudRate = 115200;  // Set the correct baud rate
+int dataBits = 8;
+Parity parity = Parity.None;
+StopBits stopBits = StopBits.One;
+```
+
+### 2. Run the Application
+Execute the program. If successful, it will open the serial port and start listening for incoming data.
+
+### 3. Sending Data
+- The program will prompt you to enter a message.
+- Type a message and press **Enter** to send it.
+- The message is sent with a **newline and carriage return (\n\r)** to indicate the end of transmission.
+
+### 4. Receiving Data
+- Incoming data is printed to the console.
+- The program continuously listens for new data.
+- Any **null or carriage return characters** are removed for cleaner output.
+
+## Error Handling
+- The program handles serial port access errors, timeouts, and disconnection issues.
+- If the COM port is unavailable, an error message is displayed.
+- Read timeouts are ignored to prevent unnecessary exceptions.
+
