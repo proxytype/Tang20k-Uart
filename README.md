@@ -46,3 +46,58 @@ Both use **`CLK_FRE`** and **`UART_FRE`** to configure baud rate.
 4. Once transmission is complete, it returns to the waiting state.
 
 This module is useful for UART debugging, echo testing, and basic communication between an FPGA and a UART-based device.
+
+
+## **Gowin IDE – FPGA Development Environment**  
+
+To compile and implement the `uart_test` module, you need to use **Gowin IDE**, an FPGA development environment specifically designed for **Gowin FPGAs**. It provides synthesis, place & route, and programming tools necessary to deploy Verilog and VHDL designs onto Gowin FPGA hardware.
+
+### **Features of Gowin IDE**  
+- **HDL Support** – Supports **Verilog** and **VHDL** design entry.  
+- **Integrated Simulation** – Allows functional verification of designs.  
+- **Synthesis & Implementation** – Converts HDL into bitstreams for Gowin FPGAs.  
+- **IP Cores** – Includes ready-to-use UART, PLL, and memory controllers.  
+- **Device Programmer** – Used for flashing compiled bitstreams onto FPGA devices.
+
+---
+
+### **Setting Up Gowin IDE**  
+1. **Download & Install**  
+   - Obtain **Gowin IDE** from the official [Gowin Semiconductor website](https://www.gowinsemi.com/).  
+   - Install the IDE and required device libraries for your FPGA model.  
+
+2. **Create a New Project**  
+   - Open **Gowin IDE**.  
+   - Click **File → New Project**.  
+   - Select the target FPGA family and device.  
+   - Choose **Verilog** as the design language.  
+
+3. **Add the `uart_test` Verilog Module**  
+   - Import the `uart_test.v` file into the **Project Manager**.  
+   - Ensure the UART RX and TX modules (`uart_rx.v`, `uart_tx.v`) are also included.  
+
+4. **Assign Pins**  
+   - Open **Constraint Editor** and map FPGA pins to `uart_rx`, `uart_tx`, `clk`, and `rst_n`.  
+
+5. **Compile & Synthesize**  
+   - Run **Synthesis** to convert Verilog code into a netlist.  
+   - Perform **Place & Route** to optimize the design for the FPGA.  
+   - Generate the final **bitstream** for programming.  
+
+6. **Programming the FPGA**  
+   - Connect your **Gowin FPGA board** via **USB JTAG**.  
+   - Use **Gowin Programmer** to load the bitstream.  
+   - Observe UART communication using a serial terminal (e.g., PuTTY, Tera Term).  
+
+---
+
+### **Additional Tools**  
+- **Gowin EDA Toolchain** – Supports third-party synthesis tools like **Synplify**.  
+- **Waveform Debugging** – Use the built-in **Gowin Logic Analyzer** to debug signals.  
+
+### **Supported FPGAs**  
+The module is compatible with various **Gowin FPGA families**, such as:  
+- GW1N (LittleBee)  
+- GW1NR (LittleBee Risc-V)  
+- GW2A (Arora)  
+
