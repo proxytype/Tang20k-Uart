@@ -1,4 +1,4 @@
-# UART Tang 20k Module
+# UART Tang Primer 20k
 
 The **`uart_test`** module is a simple UART loopback system that receives serial data via **`uart_rx`**, stores it in a buffer, and transmits it back through **`uart_tx`** after detecting a carriage return (`0x0D`).
 
