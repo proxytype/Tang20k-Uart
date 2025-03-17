@@ -103,6 +103,7 @@ The module is compatible with various **Gowin FPGA families**, such as:
 - GW1NR (LittleBee Risc-V)  
 - GW2A (Arora)  
 
+
 # SerialCommunicator
 
 ## Overview
